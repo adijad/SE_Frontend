@@ -1,0 +1,80 @@
+main{
+    padding: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    align-items: center;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+}
+footer{
+    text-align: center;
+    background-color: rgb(200, 220, 221);
+    margin-bottom: 0;
+    width:100%;
+    padding: 0.9rem;
+}
+header{
+    background-color: rgb(200, 220, 221);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width:100%;
+}
+
+.faiconplus{
+    color: rgb(144, 155, 156);
+    height: 8rem;
+    width: 8rem;
+    padding: 4rem;
+}
+.card-link{
+    color: rgb(76, 85, 86);
+    text-decoration: none;
+}
+.card-link:hover{
+    text-decoration: underline;
+}
+
+.navbar-brand{
+    font-size: xx-large;
+    padding: 0.5rem;
+}
+
+.card{
+    height: 18rem;
+    width: 18rem; 
+    
+    cursor:pointer;
+}
+
+.cardimage{
+    height: 14rem;
+    width: 17.9rem; 
+    border-bottom: 0.1px solid rgb(144, 155, 156);
+}
+
+.card-body{
+    text-align: center;
+    padding: 1rem;
+}
+.logout{
+    text-decoration: underline;
+}
+
+.nav-item{
+    font-size: large;
+    text-align: center;
+    padding-left: 1rem;
+}
+
+.box-shadow{
+    -webkit-box-shadow: 0 1px 1px rgba(72,78,85,.6);
+	box-shadow: 0 1px 1px rgba(72,78,85,.6);
+}
+
+.box-shadow:hover{
+    -webkit-box-shadow: 0 15px 35px rgba(72,78,85,.6);
+	box-shadow: 0 15px 35px rgba(72,78,85,.6);
+}
