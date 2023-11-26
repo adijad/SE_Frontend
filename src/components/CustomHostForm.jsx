@@ -19,13 +19,13 @@ const CustomHostForm = () => {
         eventVenue: '',
         dateTime: '',
         customMessage: '',
-        questions: {
+        
             question1: false,
             question2: false,
             question3: false,
             question4: false,
             question5: false,
-        },
+        
         customQuestion: '',
         eventDetails: '',
         invitationImageUrl: '',
@@ -89,6 +89,7 @@ const CustomHostForm = () => {
     //             console.log(error);
     //     }
     // };
+    const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);

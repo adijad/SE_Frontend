@@ -63,6 +63,43 @@ const DisplayEvents = () => {
         };
     }, [events]);
 
+    // useEffect(() => {
+    //     const fetchEvents = async () => {
+    //         try {
+    //             const { data } = await axios.get('http://localhost:8080/api/events');
+    //             const eventsWithImages = await Promise.all(data.map(async (event) => {
+    //                 if (event.invitationImageData) {
+    //                     // Fetch image from the server if image data is present
+    //                     const imageResponse = await axios.get(`http://localhost:8080/api/events/${event.id}/image`, {
+    //                         responseType: 'blob'
+    //                     });
+    //                     return { ...event, imageUrl: URL.createObjectURL(imageResponse.data) };
+    //                 } else {
+    //                     // Use predefined image URL or a placeholder
+    //                     return { ...event, imageUrl: event.invitationImageUrl || 'path/to/default-image.jpg' };
+    //                 }
+    //             }));
+    //             setEvents(eventsWithImages);
+    //         } catch (error) {
+    //             console.error('Error fetching events:', error);
+    //         }
+    //     };
+
+    //     fetchEvents();
+    // }, []);
+
+    // useEffect(() => {
+    //     // Clean up URLs when the component unmounts
+    //     return () => {
+    //         events.forEach(event => {
+    //             if (event.imageUrl && event.invitationImageData) {
+    //                 URL.revokeObjectURL(event.imageUrl);
+    //             }
+    //         });
+    //     };
+    // }, [events]);
+
+
     const [rsvp, setRsvp] = useState('');
 
     const handleRsvpChange = (value) => {
@@ -72,7 +109,7 @@ const DisplayEvents = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Handle form submission logic here
-        //getImagePath(event.invitationImageUrl
+        //${event.invitationImageUrl} ? getImagePath(event.invitationImageUrl) : event.imageUrl}
         console.log('Form submitted!');
     };
 
@@ -81,7 +118,7 @@ const DisplayEvents = () => {
         <div>
            {events.map(event => (
              <div className="event-invitation-card" style={{ 
-                backgroundImage: `url(${getImagePath(event.invitationImageUrl) ? getImagePath(event.invitationImageUrl) : event.imageUrl})`,
+                backgroundImage: `url(${event.invitationImageUrl ? getImagePath(event.invitationImageUrl) : event.imageUrl})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',

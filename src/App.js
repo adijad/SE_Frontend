@@ -21,7 +21,6 @@ function App() {
               <Route path="/register" element= { <Register/>} />
               <Route path="/login" element= { <Login/>} />
               <Route path="/customHostForm" element= { <CustomHostForm/>} />
-              <Route path="/" element= { <CustomHostForm/>} />
                 <Route path="/events" element={<DisplayEvents/>} />
             </Routes>
         </BrowserRouter>
