@@ -78,7 +78,7 @@ const Home = () => {
                             </div></div><div className="col cards">
                             <div className="card box-shadow">
                                 <div className="card-body">
-                                    <a href="#"> <FontAwesomeIcon icon={faCirclePlus} className="faiconplus" /></a>
+                                    <Link to="/customHostForm"> <FontAwesomeIcon icon={faCirclePlus} className="faiconplus" /></Link>
                                 </div>
                             </div>
                         </div>

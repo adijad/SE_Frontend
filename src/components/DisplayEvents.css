@@ -1,0 +1,87 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+.event-invitation-card {
+    width: 70%;
+    margin: 20px auto;
+    padding: 70px;
+    border: 1px solid #cccccc58;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #invitation-form{
+    background-color: rgba(189, 189, 189, 0.369);
+    padding: 40px;
+    border: none;
+    border-radius: 8px;
+  }
+  #invited{
+    font-family: 'Parisienne', cursive;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .event-details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .event-details {
+    width: 48%; /* Adjust as needed */
+  }
+  
+  .invitation-message {
+    width: 48%; /* Adjust as needed */
+  }
+  
+  .questionnaire-container {
+    margin-top: 20px;
+  }
+  
+  .question-container,
+  .additional-info-container {
+    margin-top: 10px;
+  }
+  
+  .question {
+    font-weight: bold;
+  }
+  
+  .radio-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .radio-buttons label {
+    margin-right: 20px;
+  }
+  
+  .answer-input,
+  .custom-question-input,
+  #custom-greeting-input,
+  #upload-picture-input,
+  .full-name-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  
+  .submit-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add more styling as needed */
