@@ -1,87 +1,186 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 
-.event-invitation-card {
-    width: 70%;
-    margin: 20px auto;
-    padding: 70px;
-    border: 1px solid #cccccc58;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
 
-  #invitation-form{
-    background-color: rgba(189, 189, 189, 0.369);
-    padding: 40px;
-    border: none;
-    border-radius: 8px;
-  }
-  #invited{
-    font-family: 'Parisienne', cursive;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  
-  .event-details-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .event-details {
-    width: 48%; /* Adjust as needed */
-  }
-  
-  .invitation-message {
-    width: 48%; /* Adjust as needed */
-  }
-  
-  .questionnaire-container {
-    margin-top: 20px;
-  }
-  
-  .question-container,
-  .additional-info-container {
-    margin-top: 10px;
-  }
-  
-  .question {
-    font-weight: bold;
-  }
-  
-  .radio-buttons {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .radio-buttons label {
-    margin-right: 20px;
-  }
-  
-  .answer-input,
-  .custom-question-input,
-  #custom-greeting-input,
-  #upload-picture-input,
-  .full-name-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  .submit-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  .submit-button:hover {
-    background-color: #45a049;
-  }
-  
-  /* Add more styling as needed */
+.event-invitation-card {
+  width: 60%;
+  margin: 20px auto;
+  padding: 40px;
+  border: 2px solid #5c5c5c;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background-color: #fefefe;
+  margin-top: 120px;
+}
+
+#invitation-form {
+  background-color: rgba(189, 189, 189, 0.369);
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+.invitation-message {
+  width: 48%;
+  font-family: 'Parisienne', cursive; /* Add the cursive font style */
+  font-size: 24px; /* Set the font size to a larger value */
+  font-weight: bold; /* Make the text bold */
+  color: #333; /* Add a color for better visibility */
+}
+
+#invited {
+  font-family: 'Parisienne', cursive;
+  font-size: 36px; /* Increase the font size for the invited heading */
+  font-weight: bold;
+  color: #5c5c5c;
+  margin-bottom: 20px;
+}
+
+
+
+.event-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.event-details {
+  width: 48%;
+  margin-bottom: 20px;
+}
+
+
+.questionnaire-container {
+  margin-top: 20px;
+}
+
+.question-container,
+.additional-info-container {
+  margin-top: 10px;
+}
+
+.question {
+  font-weight: bold;
+  color: #5c5c5c;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Align items vertically in the center */
+}
+
+/* Style for radio buttons */
+.radio-buttons input[type="radio"] {
+  appearance: none; /* Hide default radio button appearance */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #e74c3c; /* Border color for unselected state */
+  background-color: white; /* Background color for unselected state */
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Style for file input label */
+#upload-picture-input-label {
+  position: relative;
+  cursor: pointer;
+  background-color: #ff6b6b; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  margin-right: 10px;
+
+}
+
+.questionnaire-heading,
+.rsvp-container p {
+  font-weight: bold;
+}
+
+
+#file-type-info {
+  font-size: 14px;
+  margin-left: 10px;
+  color: #555; /* Adjust color as needed */
+}
+
+/* Style for file input */
+#upload-picture-input-label input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* Style for file input hover effect */
+#upload-picture-input-label:hover {
+  background-color: #e74c3c; /* Change background color on hover */
+}
+
+
+/* Style for radio buttons when selected */
+.radio-buttons input[type="radio"]:checked {
+  background-color: #e74c3c; /* Background color for selected state */
+  border-color: #e74c3c; /* Border color for selected state */
+}
+
+/* Style for radio button labels */
+.radio-buttons label {
+  white-space: nowrap;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold; /* Make the label text bold */
+}
+
+
+.radio-buttons input {
+  margin-right: 8px; /* Add some spacing between the radio button and the label */
+}
+
+
+.answer-input,
+.custom-question-input,
+#custom-greeting-input,
+#upload-picture-input,
+.full-name-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.event-detail {
+  font-weight: bold;
+}
+
+.submit-button {
+  background-color: #ff6b6b;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #e74c3c;
+}
+

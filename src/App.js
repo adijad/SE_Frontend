@@ -3,10 +3,12 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import CustomHostForm from "./components/CustomHostForm";
 import DisplayEvents from "./components/DisplayEvents";
- 
 import Home from "./components/Home";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import AppHeader from "./components/AppHeader";
+import AppFooter from "./components/AppFooter";
+import Responses from "./components/Responses";
 
 function App() {
   const {catId} = useParams();
@@ -15,14 +17,17 @@ function App() {
   return (
     <div>
 
-      <BrowserRouter>
+        <BrowserRouter>
+            <AppHeader />
             <Routes>
-              <Route path="/home" element= { <Home/>} />
-              <Route path="/register" element= { <Register/>} />
-              <Route path="/login" element= { <Login/>} />
-              <Route path="/customHostForm" element= { <CustomHostForm/>} />
-                <Route path="/events" element={<DisplayEvents/>} />
+                <Route path="/home" element= { <Home/>} />
+                <Route path="/responses" element={<Responses />} />
+                <Route path="/register" element= { <Register/>} />
+                <Route path="/login" element= { <Login/>} />
+                <Route path="/customHostForm" element= { <CustomHostForm/>} />
+                <Route path="/events/:eventId" element={<DisplayEvents />} />
             </Routes>
+            <AppFooter />
         </BrowserRouter>
       
     </div>

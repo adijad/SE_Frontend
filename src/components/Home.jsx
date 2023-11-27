@@ -24,18 +24,18 @@ import {Link} from "react-router-dom";
 const Home = () => {
   
     return (
-<div className="eventCategoriesContainer">
-<header>
-                <nav className="navbar navbar-expand-lg">
-                    <div className="container-fluid">
-                        <a className="navbar-brand" href="#">EventEase</a>
-                        
-                            <span className="d-flex">
-                               <Link to="/login"> <button type="button" className="btn btn-outline-primary">LogOut</button></Link>
-                            </span>
-                    </div>
-                </nav>
-      </header>
+// <div className="eventCategoriesContainer">
+// <header>
+//                 <nav className="navbar navbar-expand-lg">
+//                     <div className="container-fluid">
+//                         <a className="navbar-brand" href="#">EventEase</a>
+//
+//                             <span className="d-flex">
+//                                <Link to="/login"> <button type="button" className="btn btn-outline-primary">LogOut</button></Link>
+//                             </span>
+//                     </div>
+//                 </nav>
+//       </header>
 <main>
  <div className="container-lg">
                     <h5>Create an event</h5>
@@ -76,24 +76,25 @@ const Home = () => {
                                     <a href="#" className="card-link">Seminar/Workshop</a>
                                 </div>
                             </div></div><div className="col cards">
-                            <div className="card box-shadow">
-                                <div className="card-body">
-                                    <Link to="/customHostForm"> <FontAwesomeIcon icon={faCirclePlus} className="faiconplus" /></Link>
-                                </div>
-                            </div>
+                        <div className="card box-shadow">
+                            <Link to="/customHostForm" className="card-body custom-event-link">
+                                <FontAwesomeIcon icon={faCirclePlus} className="faiconplus" />
+                                Custom Event
+                            </Link>
                         </div>
+                    </div>
                     </div>
                 </div>
 
 </main>
-<footer className="bd-footer py-3">
-                <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">About Us</a></li>
-                    <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Help</a></li>
-                </ul>
-                <p className="text-center text-muted">Copyright &copy; EventEase</p>
-            </footer>
-</div>
+// <footer className="bd-footer py-3">
+//                 <ul className="nav justify-content-center border-bottom pb-3 mb-3">
+//                     <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">About Us</a></li>
+//                     <li className="nav-item"><a href="#" className="nav-link px-2 text-muted">Help</a></li>
+//                 </ul>
+//                 <p className="text-center text-muted">Copyright &copy; EventEase</p>
+//             </footer>
+// </div>
 );
 }
 export default Home;

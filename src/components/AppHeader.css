@@ -1,0 +1,55 @@
+/* Header Styling */
+header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    background-color: rgb(200, 220, 221);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+/* Brand Styling */
+.navbar-brand {
+    font-size: xx-large;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: rgb(76, 85, 86);
+}
+
+/* Button Styling */
+.btn-light {
+    background-color: #ffffff;
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-light:hover {
+    background-color: #e0e0e0;
+    color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-outline-primary,
+.btn-outline-secondary {
+    background-color: #ffffff;
+    color: #007bff;
+    border-color: #007bff;
+    margin-right: 10px;
+    transition: opacity 0.3s ease; /* Add smooth transition effect */
+}
+
+.btn-outline-secondary {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover {
+    opacity: 0.8;
+}
+
+/* Ensure header is on top of all other content */
+header {
+    z-index: 1050;
+}

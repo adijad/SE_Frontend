@@ -19,13 +19,14 @@ const CustomHostForm = () => {
         eventVenue: '',
         dateTime: '',
         customMessage: '',
-        
+
+
             question1: false,
             question2: false,
             question3: false,
             question4: false,
             question5: false,
-        
+
         customQuestion: '',
         eventDetails: '',
         invitationImageUrl: '',
@@ -50,28 +51,12 @@ const CustomHostForm = () => {
     const handleImageSelection = (themeUrl,index) => {
         setFormData({ ...formData, invitationImageUrl: themeUrl });
         setSelectedTile((prevSelectedTile) => (prevSelectedTile === index ? null : index));
-        console.log(themeUrl);
+        //console.log(themeUrl);
     };
 
-    // const handleInputChange = (e) => {
-    //     const { name, value, type, checked } = e.target;
-    //     if (type === 'checkbox') {
-    //         setFormData({
-    //             ...formData,
-    //             questions: {
-    //                 ...formData.questions,
-    //                 [name]: checked,
-    //             },
-    //         });
-    //     } else {
-    //         setFormData({
-    //             ...formData,
-    //             [name]: value,
-    //         });
-    //     }
-    // };
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
+        console.log('Form Data:', formData);
         setFormData(prevFormData => ({
             ...prevFormData,
             [name]: type === 'checkbox' ? checked : value
@@ -79,16 +64,6 @@ const CustomHostForm = () => {
     };
     
     const navigate = useNavigate();
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         await axios.post('http://localhost:8080/api/events', formData);
-    //         navigate('/events');
-    //         // Handle success
-    //     } catch (error) {
-    //             console.log(error);
-    //     }
-    // };
     const [selectedFile, setSelectedFile] = useState(null);
 
     const handleFileChange = (event) => {
@@ -104,10 +79,13 @@ const CustomHostForm = () => {
         }
 
         try {
-            await axios.post('http://localhost:8080/api/events/create-event', uploadFormData, {
+            const response = await axios.post('http://localhost:8080/api/events/create-event', uploadFormData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
-            navigate('/events'); // Adjust as needed for your routing
+
+            const createdEventId = response.data.id;
+            //console.log(response.data)// Assuming the API response includes the event ID
+            navigate(`/events/${createdEventId}`); // Adjust the route as needed
         } catch (error) {
             console.error('Error submitting the form', error);
         }
@@ -122,72 +100,41 @@ const CustomHostForm = () => {
     const getBorderColor = (index) => (selectedTile === index ? 'black' : '#ddd');
 
 
-    //   const handleInputChange = (event) => {
-    //     const { name, value } = event.target;
-    //     setFormData({
-    //       ...formData,
-    //       [name]: value,
-    //     });
-    //   };
-
-    //   const handleCheckboxChange = (question) => {
-    //     setFormData((prevFormData) => ({
-    //       ...prevFormData,
-    //       questions: {
-    //         ...prevFormData.questions,
-    //         [question]: !prevFormData.questions[question], // Toggle the value
-    //       },
-    //     }));
-    //   };
-
-    //   const handleImageUpload = (event) => {
-    //     // Add logic to handle image upload and update the state
-    //     const file = event.target.files[0];
-    //     // Add logic to handle the file, for example, upload it to a server and get the URL
-    //     const imageUrl = URL.createObjectURL(file);
-    //     setFormData({
-    //       ...formData,
-    //       invitationTheme: imageUrl, // Assuming you store the image URL
-    //     });
-    //   };
-
-    //   const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     // Add your logic to handle form submission
-    //     console.log('Form submitted:', formData);
-    //   };
-
     return (
         <div className="CustomHostFormContainer">
-            {/*  onSubmit={handleSubmit} */}
-            <form className="hostForm"  onSubmit={handleSubmit}>
-                <label>
-                    Event Type:<br />
-                    {/*  onChange={handleInputChange}  */}
-                    <input type="text" name="eventType" value={formData.eventType} onChange={handleInputChange}/>
-                </label>
-                <br />
-                <label>
-                    Event Title:<br />
-                    {/* onChange={handleInputChange}  */}
-                    <input type="text" name="eventTitle" value={formData.eventTitle} onChange={handleInputChange}/>
-                </label>
-                <br />
-                <label>
-                    Event Venue:<br />
-                    {/*  onChange={handleInputChange}  */}
-                    <input type="text" name="eventVenue" value={formData.eventVenue} onChange={handleInputChange}/>
-                </label>
-                <br />
-                <label>
-                    Event Date & Time:<br />
-                    {/*  onChange={handleInputChange}  */}
-                    <input type="datetime-local" name="dateTime" value={formData.dateTime} onChange={handleInputChange}/>
-                </label>
-                <br />
+            <form className="hostForm" onSubmit={handleSubmit}>
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Event Type:</label>
+                        <input type="text" name="eventType" value={formData.eventType} onChange={handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Event Title:</label>
+                        <input type="text" name="eventTitle" value={formData.eventTitle} onChange={handleInputChange} />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Event Venue:</label>
+                        <input type="text" name="eventVenue" value={formData.eventVenue} onChange={handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Date & Time:</label>
+                        <input type="datetime-local" name="dateTime" value={formData.dateTime} onChange={handleInputChange} />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="form-group">
+                        <label>Custom Message:</label>
+                        <input type="text" name="customMessage" value={formData.customMessage} onChange={handleInputChange} />
+                    </div>
+                    <div className="form-group">
+                        <label>Custom Question:</label>
+                        <input type="text" name="customQuestion" value={formData.customQuestion} onChange={handleInputChange} />
+                    </div>
+                </div>
                 <div>
-                    Invitation Theme:<br />
-                    {/* image tile selection */}
+                    <label>Invitation Theme:</label>
                     <div className="inv-theme-tiles">
                     <div className="image-tile" style={{ border: `2px solid ${getBorderColor(0)}` }} onClick={() => handleImageSelection("wedding",0)}>
                         <img src={themeone} alt="theme1" />
@@ -236,14 +183,6 @@ const CustomHostForm = () => {
                     {/* custom imge upload tile */}
                 </div>
 
-                
-                <br />
-                <label>
-                    Custom Message:<br />
-                    {/* onChange={handleInputChange}   */}
-                    <input type="text" name="customMessage" value={formData.customMessage} onChange={handleInputChange}/>
-                </label>
-                <br />
                 {/* Questions */}
                 <div id="questions-div">
                     <p>Questions:</p>
@@ -273,11 +212,7 @@ const CustomHostForm = () => {
                         Question 5
                     </label>
                 </div>
-                <label>
-                    Add a Custom Question:<br />
-                    {/*  onChange={handleInputChange}  */}
-                    <input type="text" name="customQuestion" value={formData.customQuestion} onChange={handleInputChange}/>
-                </label>
+
                 <br />
                 <label>
                     Event Details:<br />

@@ -4,77 +4,85 @@ main{
     margin-bottom: 4rem;
     align-items: center;
 }
-.cards{
+.cards {
     display: flex;
     justify-content: center;
 }
-footer{
-    text-align: center;
-    background-color: rgb(200, 220, 221);
-    margin-bottom: 0;
-    width:100%;
-    padding: 0.9rem;
-}
-header{
-    background-color: rgb(200, 220, 221);
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    width:100%;
+
+h5 {
+    font-size: 2rem; /* Adjust the font size as needed */
+    color: rgb(76, 85, 86);
+    text-align: center; /* Center the text */
+    margin-bottom: 1rem; /* Add margin at the bottom if needed */
 }
 
-.faiconplus{
+
+.faiconplus {
     color: rgb(144, 155, 156);
-    height: 8rem;
-    width: 8rem;
-    padding: 4rem;
+    font-size: 8rem !important;; /* Increased size */
+    transition: transform 0.3s ease-in-out !important;;
 }
-.card-link{
+.custom-event-link {
+    color: rgb(144, 155, 156);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    transition: transform 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.custom-event-link:hover {
+    text-decoration: underline;
+    transform: scale(1.1); /* Adjust the scale on hover */
+}
+
+
+.card-link {
     color: rgb(76, 85, 86);
     text-decoration: none;
+    font-weight: bold;
 }
-.card-link:hover{
+
+.card-link:hover {
     text-decoration: underline;
 }
 
-.navbar-brand{
-    font-size: xx-large;
-    padding: 0.5rem;
-}
-
-.card{
+.card {
     height: 18rem;
-    width: 18rem; 
-    
-    cursor:pointer;
+    width: 18rem;
+    cursor: pointer;
+    overflow: hidden; /* Add this line to prevent image overflow */
+    transition: box-shadow 0.3s ease-in-out;
 }
 
-.cardimage{
+.card:hover {
+    box-shadow: 0 15px 35px rgba(72, 78, 85, 0.6);
+}
+
+.cardimage {
     height: 14rem;
-    width: 17.9rem; 
+    width: 100%;
+    object-fit: cover;
     border-bottom: 0.1px solid rgb(144, 155, 156);
+    transition: transform 0.3s ease-in-out;
 }
 
-.card-body{
+.card:hover .cardimage {
+    transform: scale(1.1);
+}
+
+.card-body {
     text-align: center;
     padding: 1rem;
 }
-.logout{
-    text-decoration: underline;
-}
 
-.nav-item{
-    font-size: large;
+.footer {
     text-align: center;
-    padding-left: 1rem;
-}
-
-.box-shadow{
-    -webkit-box-shadow: 0 1px 1px rgba(72,78,85,.6);
-	box-shadow: 0 1px 1px rgba(72,78,85,.6);
-}
-
-.box-shadow:hover{
-    -webkit-box-shadow: 0 15px 35px rgba(72,78,85,.6);
-	box-shadow: 0 15px 35px rgba(72,78,85,.6);
+    background-color: rgb(200, 220, 221);
+    margin-top: 4rem;
+    padding: 0.9rem;
 }
